@@ -6,12 +6,12 @@ from datetime import datetime
 load_dotenv()
 
 # Inicialización del cliente
-url = os.getenv("SUPABASE_URL")
-key = os.getenv("SUPABASE_KEY") 
+url = st.secrets.get("SUPABASE_URL") or os.getenv("SUPABASE_URL")
+key = st.secrets.get("SUPABASE_KEY") or os.getenv("SUPABASE_KEY")
+
 supabase: Client = create_client(url, key)
 
 # --- Funciones de Acceso a Datos ---
-
 def obtener_datos(tabla):
     """Obtiene todos los registros de una tabla, ordenados por fecha de creación."""
     # Al incluir created_at, podemos ordenar los registros más recientes primero
