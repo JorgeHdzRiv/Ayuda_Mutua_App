@@ -1,0 +1,24 @@
+# Entornos virtuales
+venv/
+env/
+.venv/
+
+# Variables de entorno y secretos (¡Claves Supabase!)
+.env
+
+# Archivos cacheados y compilados de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de caché de Streamlit
+.streamlit/
+
+# Configuraciones de editores de código (ej. VS Code)
+.vscode/
+.idea/
+
+# Archivos ocultos del sistema operativo
+.DS_Store
+Thumbs.db
