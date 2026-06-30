@@ -15,7 +15,6 @@ supabase: Client = create_client(url, key)
 # --- Funciones de Acceso a Datos ---
 def obtener_datos(tabla):
     """Obtiene todos los registros de una tabla, ordenados por fecha de creación."""
-    # Al incluir created_at, podemos ordenar los registros más recientes primero
     return supabase.table(tabla).select("*").order("created_at", desc=True).execute().data
 
 def insertar_donativo(id_donante, monto, fecha, metodo):
@@ -39,7 +38,6 @@ def insertar_evento(nombre, fecha, lugar):
 
 def verificar_usuario(username, password):
     """Verifica si las credenciales coinciden en la base de datos."""
-    # En la base de datos, el usuario lo guardamos en la columna 'nombre'
     respuesta = supabase.table("usuarios").select("*").eq("nombre", username).eq("password", password).execute()
     
     if respuesta.data:

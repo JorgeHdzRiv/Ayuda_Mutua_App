@@ -34,7 +34,7 @@ def login():
     st.write("Sistema de Gestión Interna - Ayuda Mutua")
     
     with st.container():
-        # Formulario normal para usuarios registrados
+        # Formulario para usuarios registrados
         with st.form("form_login"):
             user_input = st.text_input("Usuario (nombre.apellido)")
             password = st.text_input("Contraseña", type="password")
@@ -59,7 +59,7 @@ def login():
         st.markdown("---")
         st.write("¿Quieres probar el sistema sin una cuenta?")
         
-        # Botón de acceso rápido para invitados
+        # Botón de acceso rápido para invitados no logueados en la base
         if st.button("Explorar como Invitado (Modo Demo)", width="stretch"):
             st.session_state.logueado = True
             st.session_state.usuario_actual = "Invitado Fundacion"
